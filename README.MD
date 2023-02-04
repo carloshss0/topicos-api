@@ -25,6 +25,10 @@ Essa API foi testada utilizando o Postman, que é uma plataforma para projetar, 
 ## Features
 
 - [x] CRUD dos tópicos
-- [ ] Autenticação e Segurança da API.
-- [ ] Monitoramento da API.
-- [ ] Documentação da API com Swagger.
+- [x] Autenticação e Segurança da API.
+- [x] Monitoramento da API.
+- [x] Documentação da API com Swagger.
+- [ ] Atualizar configurações de segurança.
+- [ ] Testes automatizados.
+- [ ] Deploy com Docker;
+- [ ] Deploy com Heroku.
