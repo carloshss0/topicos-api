@@ -41,6 +41,7 @@ o processo de testes das requisições HTTP por não precisar de autenticação 
 - [x] Spring Data
 - [x] Spring Security
 - [x] Postman
+- [x] JUnit
 - [x] Swagger
 
 
@@ -52,6 +53,5 @@ o processo de testes das requisições HTTP por não precisar de autenticação 
 - [x] Monitoramento da API.
 - [x] Documentação da API com Swagger.
 - [x] Utilização de Profiles no Spring visando produtividade.
-- [ ] Testes automatizados.
-- [ ] Deploy com Docker;
-- [ ] Deploy com Heroku.
+- [x] Testes automatizados.
+- [x] Deploy com Docker;
