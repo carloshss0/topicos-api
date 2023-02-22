@@ -121,4 +121,7 @@ public class Topico {
 		this.respostas = respostas;
 	}
 
+    public void adicionarResposta(Resposta resposta) {
+		this.respostas.add(resposta);
+    }
 }

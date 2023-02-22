@@ -18,7 +18,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @EnableWebSecurity
 @Configuration
-@Profile(value = {"prod", "test"})
+@Profile(value = {"prod", "test", "default"})
 public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
 
     @Autowired
@@ -46,16 +46,18 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
+                .antMatchers("/h2-console/**").permitAll()
                 .antMatchers(HttpMethod.GET ,"/topicos").permitAll()
                 .antMatchers(HttpMethod.GET, "/topicos/*").permitAll()
                 .antMatchers(HttpMethod.POST, "/auth").permitAll()
                 .antMatchers(HttpMethod.GET,"/actuator/**").permitAll()
+                .antMatchers(HttpMethod.POST,"/signin").permitAll()
                 .antMatchers(HttpMethod.DELETE,"/topicos/*").hasRole("MODERADOR")
                 .anyRequest().authenticated()
                 .and().csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
-                .and()
-                .addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, repository), UsernamePasswordAuthenticationFilter.class);
+                .and().headers().frameOptions().sameOrigin()
+                .and().addFilterBefore(new AutenticacaoViaTokenFilter(tokenService, repository), UsernamePasswordAuthenticationFilter.class);
     }
 
     //Configurações de recursos estáticos(js, css, imagem, etc.)

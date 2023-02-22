@@ -17,6 +17,16 @@ public class Resposta {
 	private Usuario autor;
 	private Boolean solucao = false;
 
+
+	public Resposta() {
+	}
+
+	public Resposta(String mensagem, Usuario autor, Topico topico) {
+		this.mensagem = mensagem;
+		this.autor = autor;
+		this.topico = topico;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;

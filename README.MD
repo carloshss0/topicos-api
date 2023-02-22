@@ -55,3 +55,5 @@ o processo de testes das requisições HTTP por não precisar de autenticação 
 - [x] Utilização de Profiles no Spring visando produtividade.
 - [x] Testes automatizados.
 - [x] Deploy com Docker;
+- [x] Funcionalidade de responder um tópico foi implementada.
+- [x] Funcionaldiade de criar um usuário foi implementada.
